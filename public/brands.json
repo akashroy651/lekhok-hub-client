@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Reedsy",
+    "logo": "reedsy-logo.png",
+    "website": "https://reedsy.com"
+  },
+  {
+    "name": "StoryMirror",
+    "logo": "storymirror-logo.png",
+    "website": "https://storymirror.com"
+  },
+  {
+    "name": "Inkitt",
+    "logo": "inkitt-logo.png",
+    "website": "https://www.inkitt.com"
+  },
+  {
+    "name": "NewPages",
+    "logo": "newpages-logo.png",
+    "website": "https://www.newpages.com"
+  },
+  {
+    "name": "Wattpad",
+    "logo": "wattpad-logo.png",
+    "website": "https://www.wattpad.com"
+  }
+]
