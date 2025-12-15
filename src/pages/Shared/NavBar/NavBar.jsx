@@ -36,11 +36,21 @@ const NavBar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="all-contest">All Contest</NavLink>
+        <NavLink to="/all-contest">All Contest</NavLink>
       </li>
       <li>
-        <NavLink to="contest-create">Contest Create</NavLink>
+        <NavLink to="/contest-create">Contest Create</NavLink>
       </li>
+
+      {
+        user && <>
+           <li>
+            <NavLink to="/dashboard/my-contest">My Contest</NavLink>
+          </li>
+
+        </>
+      }
+
     </>
   );
 

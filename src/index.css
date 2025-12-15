@@ -15,9 +15,10 @@
     --color-secondary: #03373D;
 }
 
- a.active{
+ /* li a.active{
   text-decoration: underline;
-}
+  color: red;
+} */
 
 
 body {
