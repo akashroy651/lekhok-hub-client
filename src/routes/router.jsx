@@ -8,7 +8,10 @@ import AllContest from "../pages/AllContest/AllContest";
 import PrivateRoute from "./PrivateRoute";
 import ContestCreate from "../pages/ContestCreate/ContestCreate";
 import DashboardLayout from "../layouts/DashboardLayout";
-import MyContest from "../pages/Dashboard/MyContest/MyContest";
+import MyContests from "../pages/Dashboard/MyContest/MyContests";
+import Payment from "../pages/Dashboard/Payment/Payment";
+import PaymentSuccess from "../pages/Dashboard/Payment/paymentSuccess";
+import PaymentCancelled from "../pages/Dashboard/Payment/PaymentCancelled";
 
 
 export const router = createBrowserRouter([
@@ -50,8 +53,20 @@ export const router = createBrowserRouter([
     element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
     children: [
       {
-        path: 'my-contest',
-        Component: MyContest
+        path: 'my-contests',
+        Component: MyContests,
+      },
+      {
+        path: 'payment/:contestId',
+        Component: Payment,
+      },
+      {
+        path: 'payment-success',
+        Component: PaymentSuccess,
+      },
+      {
+        path: 'payment-cancelled',
+        Component: PaymentCancelled,
       }
     ]
   }

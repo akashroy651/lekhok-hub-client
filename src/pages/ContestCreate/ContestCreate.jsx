@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router";
 
 const ContestCreate = () => {
 
@@ -13,9 +14,11 @@ const ContestCreate = () => {
         } = useForm();
 
      const { user } = useAuth();
-     console.log('byfici', user.email)  
+    //  console.log('user email check', user.email)  
 
       const axiosSecure = useAxiosSecure();  
+
+      const navigate = useNavigate();
 
   const contestSubmit = (data) => {
     console.log("New Contest Data:", data);
@@ -26,7 +29,7 @@ const ContestCreate = () => {
         creatorEmail: user.email
 
     }
-    console.log('hello data', contestData)
+    
 
     Swal.fire({
   title: "Confirm contest?",
@@ -40,9 +43,19 @@ const ContestCreate = () => {
   if (result.isConfirmed) {
 
     // save the parcel info to the data base
-    axiosSecure.post('/contest', contestData)
+    axiosSecure.post('/contests', contestData)
     .then( res => {
         console.log('after saving contest',res.data)
+        if (res.data.insertedId)  {
+            navigate('/dashboard/my-contests')
+            Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Join contest please pay!",
+                    showConfirmButton: false,
+                    timer: 2500
+                    });
+        }
     })
     //<
     // Swal.fire({

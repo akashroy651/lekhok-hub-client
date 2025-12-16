@@ -37,7 +37,6 @@ const DashboardLayout = () => {
           {/* Page content here */}
 
           <Outlet></Outlet>
-        
         </div>
 
         <div className="drawer-side is-drawer-close:overflow-visible">
@@ -76,21 +75,17 @@ const DashboardLayout = () => {
 
               {/* our dashboard links */}
 
-            <li>
+              <li>
                 <NavLink
                   className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-                  data-tip="MyContest" to="/dashboard/my-contest"
+                  data-tip="MyContests"
+                  to="/dashboard/my-contests"
                 >
                   {/* Settings icon */}
                   <FaUserTie />
                   <span className="is-drawer-close:hidden">MyContest</span>
                 </NavLink>
               </li>
-
-
-             
-              
-
 
               {/* List item */}
               <li>
