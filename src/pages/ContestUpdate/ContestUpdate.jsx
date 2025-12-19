@@ -131,17 +131,6 @@ const ContestUpdate = () => {
           {errors.deadline && <p className="text-red-500">Deadline is required</p>}
         </div>
 
-        {/* Cover Image */}
-        {/* <div>
-          <label className="block font-semibold">Optional Cover Image</label>
-          <input
-            type="file"
-            {...register("coverImage")}
-            className="file-input w-full mt-1"
-          />
-        </div> */}
-
-        {/* Submit Button */}
         <button 
           type="submit"
           className="btn btn-primary text-black mt-4 w-full"
