@@ -12,6 +12,7 @@ import MyContests from "../pages/Dashboard/MyContest/MyContests";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentSuccess from "../pages/Dashboard/Payment/paymentSuccess";
 import PaymentCancelled from "../pages/Dashboard/Payment/PaymentCancelled";
+import UsersManagement from "../pages/Dashboard/UsersManagement/UsersManagement";
 
 
 export const router = createBrowserRouter([
@@ -67,7 +68,11 @@ export const router = createBrowserRouter([
       {
         path: 'payment-cancelled',
         Component: PaymentCancelled,
-      }
+      },
+      {
+        path: 'users-management',
+        Component: UsersManagement,
+      },
     ]
   }
 ]);

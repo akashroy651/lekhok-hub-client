@@ -44,6 +44,7 @@ useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser)
         setLoading(false);
+        console.log('authProvider theke',currentUser)
     })
     return () => {
         unSubscribe()

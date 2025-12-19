@@ -1,6 +1,6 @@
 import React from "react";
 import { CiDeliveryTruck } from "react-icons/ci";
-import { FaUserTie } from "react-icons/fa6";
+import { FaUsers, FaUserTie } from "react-icons/fa6";
 import { Link, NavLink, Outlet } from "react-router";
 
 const DashboardLayout = () => {
@@ -81,9 +81,22 @@ const DashboardLayout = () => {
                   data-tip="MyContests"
                   to="/dashboard/my-contests"
                 >
-                  {/* Settings icon */}
+                  
                   <FaUserTie />
                   <span className="is-drawer-close:hidden">MyContest</span>
+                </NavLink>
+              </li>
+
+              {/* user Management */}
+
+              <li>
+                <NavLink
+                  className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                  data-tip="Users Management"
+                  to="/dashboard/users-management"
+                >
+                  <FaUsers />
+                  <span className="is-drawer-close:hidden">Users Management</span>
                 </NavLink>
               </li>
 
