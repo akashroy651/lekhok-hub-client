@@ -39,12 +39,7 @@ const AllContest = () => {
                   {contest.paymentStatus === "paid" ? (
                     <span className="text-green-400 font-semibold">Paid</span>
                   ) : (
-                    // <Link to={`/dashboard/payment/${contest._id}`}>
-                    // <button
-                    //  className="btn btn-primary
-                    //   text-black btn-sm">Pay</button>
-                    // </Link>
-
+                   
                     <p
                     //   onClick={() => handlePayment(contest)}
                       className=" font-semibold"
@@ -54,16 +49,6 @@ const AllContest = () => {
                   )}
                 </td>
 
-                {/* <td>
-                  <button className="btn btn-square"></button>
-
-                  <button
-                    onClick={() => handleContestDelete(contest._id)}
-                    className="btn btn-square"
-                  >
-                    <FaTrashCan></FaTrashCan>
-                  </button>
-                </td> */}
               </tr>
             ))}
           </tbody>

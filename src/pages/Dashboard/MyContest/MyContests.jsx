@@ -5,6 +5,8 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { FaTrashCan } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import { Link } from "react-router";
+import { LuView } from "react-icons/lu";
+import { FaEdit } from "react-icons/fa";
 
 const MyContests = () => {
   const { user } = useAuth();
@@ -18,7 +20,7 @@ const MyContests = () => {
   });
 
   const handleContestDelete = (id) => {
-    console.log(id);
+    // console.log(id);
 
     Swal.fire({
       title: "Are you sure?",
@@ -84,11 +86,13 @@ const MyContests = () => {
           </thead>
           <tbody>
             {contests.map((contest, index) => (
+        
               <tr key={contest._id}>
                 <th>{index + 1}</th>
                 <td>{contest.title}</td>
                 <td>{contest.category}</td>
                 <td>{contest.entryFee}</td>
+                
                 <td>
                   {
                     contest.paymentStatus === 'paid' ?
@@ -102,20 +106,25 @@ const MyContests = () => {
                 
                     <button
                     onClick={() => handlePayment(contest)}
-                     className="btn btn-primary
-                      text-black btn-sm">Pay</button>
+                     className="btn btn-primary tooltip
+                      text-black btn-sm" data-tip="Please Pay">Pay</button>
                    
                   }
                 </td>
 
                 <td>
-                  <button className="btn btn-square">
+                  <Link to={`/dashboard/contest/${contest._id}`} className="btn btn-square tooltip mr-10" data-tip="🔍ViewDetails">
+                    <LuView />
+                  </Link>
 
-                  </button>
+                  <Link to={`/dashboard/contestUpdate/${contest._id}`}
+                   className="btn  btn-square mr-10 tooltip" data-tip="📝Edit">
+                  <FaEdit />
+                  </Link>
 
                   <button
                     onClick={() => handleContestDelete(contest._id)}
-                    className="btn btn-square"
+                    className="btn btn-square tooltip" data-tip="❌Delete"
                   >
                     <FaTrashCan></FaTrashCan>
                   </button>
