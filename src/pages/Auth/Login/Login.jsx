@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import { Link, useLocation, useNavigate } from "react-router";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Swal from "sweetalert2";
 
 const Login = () => {
     
@@ -31,10 +32,27 @@ const Login = () => {
     
         signInUser(data.email, data.password)
         .then(result => {
-            console.log(result.user)
+            console.log('login',result.user)
+             Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "Login Successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+
+            
         })
         .catch(error => {
             console.log(error)
+            
+             Swal.fire({
+                    position: "top-center",
+                    icon: "error",
+                    title: "auth/invalid-credential",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
         })
     }
 

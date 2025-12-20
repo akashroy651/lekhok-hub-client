@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useForm } from 'react-hook-form';
 import { useQuery } from '@tanstack/react-query';
+import Swal from 'sweetalert2';
 
 const ContestUpdate = () => {
     const { id } = useParams();
@@ -29,13 +30,24 @@ const ContestUpdate = () => {
       setValue("deadline", contest.deadline);
     }, [setValue , contest])
 
+    const handleUpdate = async (data) => {
+        await axiosSecure.patch(`/contests/${id}`, data)
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Contest Updated",
+            showConfirmButton: false,
+            timer: 1500
+            });
+    }
+
     return (
         <div>
             <h2>new update</h2>
             <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
-      <h2 className="text-3xl font-bold mb-6 text-center">Update New Contest</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center">Update Contest</h2>
 
-      <form  className="space-y-4">
+      <form onSubmit={handleSubmit(handleUpdate)}  className="space-y-4">
         
         {/* Contest Title */}
         <div>

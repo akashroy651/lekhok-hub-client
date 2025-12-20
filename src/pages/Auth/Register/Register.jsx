@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import axios from "axios";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const {register, handleSubmit, formState: { errors } } = useForm();
@@ -47,6 +48,13 @@ const Register = () => {
           .then((res) => {
               if(res.data.insertedId){
                 console.log('user created in the data base')
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "user created",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
               }
           })
 
@@ -60,17 +68,28 @@ const Register = () => {
             .then( 
               () => {
               console.log('user profile update done')
+             
               navigate(location.state || '/')
             })
             .catch(error => {
+
               console.log(error)
+
             })
 
         })
 
       })
       .catch(error => {
+ 
         console.log(error)
+               Swal.fire({
+                  position: "top-center",
+                  icon: "error",
+                  title: "auth/email-already-in-use",
+                  showConfirmButton: false,
+                  timer: 1500
+                });
       })
     }
 

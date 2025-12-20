@@ -2,8 +2,10 @@ import React from "react";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { FaUsers, FaUserTie } from "react-icons/fa6";
 import { Link, NavLink, Outlet } from "react-router";
+import useRole from "../hooks/useRole";
 
 const DashboardLayout = () => {
+const {role} = useRole();
   return (
     <div>
       <div className="drawer lg:drawer-open max-w-7xl mx-auto">
@@ -74,7 +76,7 @@ const DashboardLayout = () => {
               </li>
 
               {/* our dashboard links */}
-
+                {/* my Contest  */}
               <li>
                 <NavLink
                   className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
@@ -88,7 +90,6 @@ const DashboardLayout = () => {
               </li>
 
               {/* user Management */}
-
               <li>
                 <NavLink
                   className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
