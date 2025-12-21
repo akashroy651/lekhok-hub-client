@@ -49,9 +49,9 @@ const ContestCreate = () => {
         if (res.data.insertedId)  {
             navigate('/dashboard/my-contests')
             Swal.fire({
-                    position: "top-end",
+                    position: "top-center",
                     icon: "success",
-                    title: "Join contest please pay!",
+                    title: "please pay & Joining the contest!",
                     showConfirmButton: false,
                     timer: 2500
                     });
@@ -181,6 +181,7 @@ const ContestCreate = () => {
 
         {/* Submit Button */}
         <button 
+        
           type="submit"
           className="btn btn-primary text-black mt-4 w-full"
         >

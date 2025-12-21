@@ -71,7 +71,7 @@ const ContestDetails = () => {
               : "bg-blue-600 text-white hover:bg-blue-700"
           }`}
         >
-          {contest.paymentStatus === "paid" ? "Already Paid ✔" : "Pay Now 💳"}
+          {contest.paymentStatus === "paid" ? "Already Paid ✔" : "Pay  Now 💳"}
         </button>
 
       </div>

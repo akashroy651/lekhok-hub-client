@@ -1,12 +1,12 @@
 import React from "react";
 import { CiDeliveryTruck } from "react-icons/ci";
-import { FaUsers, FaUserTie } from "react-icons/fa6";
+import { FaUsers, FaUserShield, FaUserTie } from "react-icons/fa6";
 import { Link, NavLink, Outlet } from "react-router";
 import useRole from "../hooks/useRole";
 
 const DashboardLayout = () => {
 const {role} = useRole();
-console.log('22222222', role)
+
   return (
     <div>
       <div className="drawer lg:drawer-open max-w-7xl mx-auto">
@@ -91,7 +91,6 @@ console.log('22222222', role)
               </li>
 
               {/* user Management */}
-            
                   {
                     role  === 'admin' && <>
                         <li>
@@ -106,6 +105,24 @@ console.log('22222222', role)
               </li>
                     </>
                   }
+
+
+                  {/* Contest Participant */}
+
+                   <li>
+                <NavLink
+                  className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                  data-tip="ContestParticipant"
+                  to="/dashboard/contest-participant"
+                >
+                  
+                  <FaUserShield />
+                  <span className="is-drawer-close:hidden">MyContest</span>
+                </NavLink>
+              </li>
+
+
+
 
               {/* List item */}
               <li>

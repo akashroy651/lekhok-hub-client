@@ -16,6 +16,7 @@ import UsersManagement from "../pages/Dashboard/UsersManagement/UsersManagement"
 import ContestDetails from "../pages/ContestDetails/ContestDetails";
 import ContestUpdate from "../pages/ContestUpdate/ContestUpdate";
 import AdminRoute from "./AdminRoute";
+import ContestParticipant from "../pages/Dashboard/ContestParticipant/ContestParticipant";
 
 
 export const router = createBrowserRouter([
@@ -84,6 +85,10 @@ export const router = createBrowserRouter([
         path: 'users-management',
         Component: UsersManagement,
         // element: <AdminRoute><UsersManagement></UsersManagement></AdminRoute>
+      },
+      {
+        path: 'contest-participant',
+        Component: ContestParticipant,
       },
     ]
   }
