@@ -8,11 +8,11 @@ const axiosSecure =axios.create({
 })
 
 const useAxiosSecure = () => {
-const { user,
-     logOut
+const { user
+    //  logOut
      } = useAuth();
 
-const navigate = useNavigate();
+// const navigate = useNavigate();
 
 // JWT Token create // interceptor request 
 useEffect(() => {
@@ -27,18 +27,21 @@ useEffect(() => {
     },(error)=>{
         console.log(error);
 
-        //>
-        const statusCode = error.status;
-        if(statusCode === 401 || statusCode === 403 ){
-            logOut()
-            .then(() => {
-                navigate('/login')
-            })
-        }
+        // //>
+        // const statusCode = error.status:
+        // if(statusCode === 401 || statusCode === 403 ){
+        //     logOut()
+        //     .then(() => {
+        //         navigate('/login')
+        //     })
+        // }
 
-        //<
+        // //<
+
+
 
         return Promise.reject(error);
+
 
     })
 
