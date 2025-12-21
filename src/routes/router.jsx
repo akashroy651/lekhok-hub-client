@@ -15,6 +15,7 @@ import PaymentCancelled from "../pages/Dashboard/Payment/PaymentCancelled";
 import UsersManagement from "../pages/Dashboard/UsersManagement/UsersManagement";
 import ContestDetails from "../pages/ContestDetails/ContestDetails";
 import ContestUpdate from "../pages/ContestUpdate/ContestUpdate";
+import AdminRoute from "./AdminRoute";
 
 
 export const router = createBrowserRouter([
@@ -82,6 +83,7 @@ export const router = createBrowserRouter([
       {
         path: 'users-management',
         Component: UsersManagement,
+        // element: <AdminRoute><UsersManagement></UsersManagement></AdminRoute>
       },
     ]
   }

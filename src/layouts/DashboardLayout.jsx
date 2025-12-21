@@ -6,6 +6,7 @@ import useRole from "../hooks/useRole";
 
 const DashboardLayout = () => {
 const {role} = useRole();
+console.log('22222222', role)
   return (
     <div>
       <div className="drawer lg:drawer-open max-w-7xl mx-auto">
@@ -90,7 +91,10 @@ const {role} = useRole();
               </li>
 
               {/* user Management */}
-              <li>
+            
+                  {
+                    role  === 'admin' && <>
+                        <li>
                 <NavLink
                   className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                   data-tip="Users Management"
@@ -100,6 +104,8 @@ const {role} = useRole();
                   <span className="is-drawer-close:hidden">Users Management</span>
                 </NavLink>
               </li>
+                    </>
+                  }
 
               {/* List item */}
               <li>

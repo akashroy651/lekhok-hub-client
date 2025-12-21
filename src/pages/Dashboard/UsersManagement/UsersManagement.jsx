@@ -17,7 +17,7 @@ const UsersManagement = () => {
   });
 
   // make admin
-  const handleMakeUser = (user) => {
+  const handleMakeAdmin = (user) => {
     Swal.fire({
       title: "Are you sure?",
       text: `${user.displayName} marked as an admin`,
@@ -29,7 +29,7 @@ const UsersManagement = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         const roleInfo = { role: "admin" };
-        axiosSecure.patch(`/users/${user._id}`, roleInfo).then((res) => {
+        axiosSecure.patch(`/users/${user._id}/role`, roleInfo).then((res) => {
           console.log("deki", res.data);
           if (res.data.modifiedCount) {
             refetch();
@@ -58,7 +58,7 @@ const UsersManagement = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         const roleInfo = { role: "user" };
-        axiosSecure.patch(`/users/${user._id}`, roleInfo).then((res) => {
+        axiosSecure.patch(`/users/${user._id}/role`, roleInfo).then((res) => {
           console.log("deki", res.data);
           if (res.data.modifiedCount) {
             refetch();
@@ -123,7 +123,7 @@ const UsersManagement = () => {
                     </button>
                   ) : (
                     <button
-                      onClick={() => handleMakeUser(user)}
+                      onClick={() => handleMakeAdmin(user)}
                       className="btn tooltip mr-2 bg-green-400"
                       data-tip="✅Make Admin"
                     >
