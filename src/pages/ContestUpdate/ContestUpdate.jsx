@@ -48,7 +48,7 @@ const ContestUpdate = () => {
 
   return (
     <div>
-      <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+      <div className="max-w-2xl mx-auto p-6  shadow-md rounded-lg mt-10">
         <h2 className="text-3xl font-bold mb-6 text-center">Update Contest</h2>
 
         <form onSubmit={handleSubmit(handleUpdate)} className="space-y-4">

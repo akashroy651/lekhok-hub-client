@@ -36,7 +36,7 @@ const ContestDetails = () => {
 
   return (
     <div>
-      <h2>hello details</h2>
+    
       <div className="max-w-2xl mx-auto px-4 py-8">
         <div className="shadow-lg rounded-xl p-6 bg-white space-y-4">
           <h1 className="text-2xl font-bold text-center text-blue-600">
