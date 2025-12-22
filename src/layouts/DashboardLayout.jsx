@@ -3,7 +3,7 @@ import { CiDeliveryTruck } from "react-icons/ci";
 import { FaUsers, FaUserShield, FaUserTie } from "react-icons/fa6";
 import { Link, NavLink, Outlet } from "react-router";
 import useRole from "../hooks/useRole";
-import { MdLeaderboard, MdViewList } from "react-icons/md";
+import { MdLeaderboard } from "react-icons/md";
 
 const DashboardLayout = () => {
 const {role} = useRole();
@@ -100,7 +100,7 @@ const {role} = useRole();
                   to="/dashboard/all-contests"
                 >
                   
-                  <MdViewList />
+                  
                   <span className="is-drawer-close:hidden">MyContest</span>
                 </NavLink>
               </li>
