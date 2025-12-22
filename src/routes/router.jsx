@@ -19,83 +19,96 @@ import AdminRoute from "./AdminRoute";
 import ContestParticipant from "../pages/Dashboard/ContestParticipant/ContestParticipant";
 import ContestWinner from "../pages/Dashboard/ContestWinner/ContestWinner";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
     children: [
-        {
-            index: true,
-            Component: Home,
-        },
-        {
-          path: 'all-Contest',
-          Component: AllContest,
-        },
-        {
-          path: 'contest-create',
-          element:<PrivateRoute><ContestCreate></ContestCreate></PrivateRoute>
-        },
-         {
-        path: 'contest-winner',
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: "all-contest",
+        Component: AllContest,
+      },
+      {
+        path: "contest-create",
+        element: (
+          <PrivateRoute>
+            <ContestCreate></ContestCreate>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "contest-winner",
         Component: ContestWinner,
-      }
-
-    ]
+      },
+    ],
   },
   {
-    path: '/',
+    path: "/",
     Component: AuthLayout,
     children: [
       {
-        path: 'login',
+        path: "login",
         Component: Login,
       },
       {
-        path: 'register',
+        path: "register",
         Component: Register,
       },
-    ]
+    ],
   },
   {
-    path: 'dashboard',
-    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
     children: [
       {
-        path: 'my-contests',
+        path: "my-contests",
         Component: MyContests,
       },
       {
-        path: 'contestUpdate/:id',
+        path: "contestUpdate/:id",
         Component: ContestUpdate,
       },
       {
-        path: 'contest/:id',
+        path: "contest/:id",
         Component: ContestDetails,
       },
       {
-        path: 'payment/:contestId',
+        path: "payment/:contestId",
         Component: Payment,
       },
       {
-        path: 'payment-success',
+        path: "payment-success",
         Component: PaymentSuccess,
       },
       {
-        path: 'payment-cancelled',
+        path: "payment-cancelled",
         Component: PaymentCancelled,
       },
       {
-        path: 'users-management',
+        path: "users-management",
         Component: UsersManagement,
         // element: <AdminRoute><UsersManagement></UsersManagement></AdminRoute>
       },
       {
-        path: 'contest-participant',
+        path: "contest-participant",
         Component: ContestParticipant,
       },
-     
-    ]
-  }
+      {
+        path: "contest-winner",
+        Component: ContestWinner,
+      },
+      {
+        path: "all-contests",
+        Component: AllContest,
+      },
+    ],
+  },
 ]);

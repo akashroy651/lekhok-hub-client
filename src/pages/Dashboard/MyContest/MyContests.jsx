@@ -71,8 +71,9 @@ const MyContests = () => {
 
   return (
     <div>
-      <h2>All of my contest: {contests.length}</h2>
+    
       <div className="overflow-x-auto">
+          <h2 className="text-3xl">All of my contest: {contests.length}</h2>
         <table className="table table-zebra">
           {/* head */}
           <thead>

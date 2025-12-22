@@ -30,7 +30,7 @@ const ContestWinner = () => {
           <thead>
             <tr>
               <th>Rank</th>
-              {/* <th>Email</th> */}
+              <th>Email</th>
               <th>Title</th>
               <th>Total Score</th>
               <th>Prize Money</th>
@@ -41,7 +41,7 @@ const ContestWinner = () => {
             {leaderboard.map((user) => (
               <tr key={user.email}>
                 <td>{user.rank}</td>
-                {/* <td>{user.email}</td> */}
+                <td>{user.email}</td>
                 <td>{user.title}</td>
                 <td>{user.totalScore}</td>
                 <td>{user.prize} ৳</td>

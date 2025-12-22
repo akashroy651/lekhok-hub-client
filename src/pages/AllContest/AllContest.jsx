@@ -15,8 +15,9 @@ const AllContest = () => {
   console.log("all-contest", contests);
   return (
     <div>
-      <h2>hey hello all contest : {contests.length} </h2>
+  
       <div className="overflow-x-auto">
+        <h2 className="p-2 text-3xl">All contest : {contests.length} </h2>
         <table className="table table-zebra">
           {/* head */}
           <thead>

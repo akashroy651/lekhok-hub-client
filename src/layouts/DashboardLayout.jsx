@@ -3,6 +3,7 @@ import { CiDeliveryTruck } from "react-icons/ci";
 import { FaUsers, FaUserShield, FaUserTie } from "react-icons/fa6";
 import { Link, NavLink, Outlet } from "react-router";
 import useRole from "../hooks/useRole";
+import { MdLeaderboard, MdViewList } from "react-icons/md";
 
 const DashboardLayout = () => {
 const {role} = useRole();
@@ -90,6 +91,20 @@ const {role} = useRole();
                 </NavLink>
               </li>
 
+
+                {/* All Contest  */}
+              <li>
+                <NavLink
+                  className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                  data-tip="AllContests"
+                  to="/dashboard/all-contests"
+                >
+                  
+                  <MdViewList />
+                  <span className="is-drawer-close:hidden">MyContest</span>
+                </NavLink>
+              </li>
+
               {/* user Management */}
                   {
                     role  === 'admin' && <>
@@ -121,17 +136,17 @@ const {role} = useRole();
                 </NavLink>
               </li>
 
-              
+
                   {/* Contest Winner */}
 
                    <li>
                 <NavLink
                   className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-                  data-tip="ContestParticipant"
-                  to="/dashboard/contest-participant"
+                  data-tip="ContestWinner"
+                  to="/dashboard/contest-winner"
                 >
                   
-                  <FaUserShield />
+                  <MdLeaderboard />
                   <span className="is-drawer-close:hidden">MyContest</span>
                 </NavLink>
               </li>
