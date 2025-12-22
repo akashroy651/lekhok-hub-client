@@ -12,8 +12,7 @@ const Home = () => {
             <Banner></Banner>
          
             <WorkSection></WorkSection>
-            <WorkSection></WorkSection>
-
+            
             <Brands brandsPromise={brandsPromise}></Brands>
         </div>
     );

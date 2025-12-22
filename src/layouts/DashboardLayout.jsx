@@ -97,7 +97,7 @@ const {role} = useRole();
                 <NavLink
                   className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
                   data-tip="AllContests"
-                  to="/dashboard/all-contest"
+                  to="/dashboard/all-contests"
                 >
                   
                   <MdViewList />
