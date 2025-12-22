@@ -41,7 +41,7 @@ const Login = () => {
                     timer: 1500
                   });
 
-            
+            console.log('login', data)
         })
         .catch(error => {
             console.log(error)
@@ -56,6 +56,7 @@ const Login = () => {
         })
     }
 
+    
   return (
     <div>
       <div className="card bg-base-100 w-full mx-auto max-w-sm shrink-0 shadow-2xl">
@@ -96,10 +97,10 @@ const Login = () => {
             </div>
             <button className="btn btn-neutral mt-4">Login</button>
           </fieldset>
-          <p>New to lekhok hub
+          <p>New to lekhok hub 
          <Link 
          state={location.state}
-         className="text-blue-300 underline" to="/register">Register</Link></p>
+         className="text-blue-300 underline" to="/register"> Register</Link></p>
         </form>
         <SocialLogin></SocialLogin>
       </div>

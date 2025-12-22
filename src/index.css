@@ -4,9 +4,9 @@
 
 @import "tailwindcss";
 
-@plugin "daisyui" {
+/* @plugin "daisyui" {
     themes: light --default;
-};
+}; */
 
 @plugin "daisyui/theme" {
     name: "light";
@@ -14,6 +14,14 @@
     --color-primary: #CAEB66;
     --color-secondary: #03373D;
 }
+
+/* toggle light */
+@plugin "daisyui"{
+  themes: light --default, dark --prefersdark;
+}
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+
 
  /* li a.active{
   text-decoration: underline;
@@ -27,3 +35,6 @@ body {
   /* font-weight: <weight>; */
   font-style: normal;
 }
+
+
+ 

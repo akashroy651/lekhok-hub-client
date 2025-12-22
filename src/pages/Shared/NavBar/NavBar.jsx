@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../../../components/Logo/Logo";
 import { Link, NavLink } from "react-router";
 import useAuth from "../../../hooks/useAuth";
@@ -11,7 +11,7 @@ const NavBar = () => {
   const handleLogOut = () => {
     logOut()
       .then( () => {
-        alert("Log out success")
+        // alert("Log out success")
       })
       
       .catch((error) => {
@@ -56,6 +56,26 @@ const NavBar = () => {
 
     </>
   );
+
+
+   const [ theme, setTheme] =useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+  const  html = document.querySelector('html');
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme)
+  },[theme])
+
+
+  // theme color change 
+  const handleTheme = (checked) => {
+ 
+  setTheme(checked? "dark" : "light")
+
+  }
+
+
+
 
   return (
     <div className="navbar bg-base-100 shadow-sm">
@@ -127,7 +147,7 @@ const NavBar = () => {
               tabIndex="-1"
               className="menu  menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
             >
-              <div className=" pb-3 border-b border-b-gray-200">
+              <div className=" pb-3 border-b border-b-gray-200 mb-3">
                 <li className="text-sm font-bold">{user.displayName}</li>
                 <li className="text-xs">{user.email}</li>
               </div>
@@ -137,13 +157,17 @@ const NavBar = () => {
                 </Link>
               </li> */}
 
+                {/* theme change option */}
+            
+              <input onChange={(e)=> handleTheme(e.target.checked)} type="checkbox"
+            defaultChecked={localStorage.getItem('theme') === "dark"} className="toggle" />
+      
+       {/* end theme change option */}
+
               <li>
-                <Link to={"/dashboard/my-contests"}>My Models</Link>
+                <Link className=" mt-2 mb-2 hover:underline" to={"/dashboard/my-contests"}>My Contests</Link>
               </li>
 
-              {/* <li>
-                <Link to={"/my-downloads"}>My Downloads</Link>
-              </li> */}
 
               {/* <input
                 onChange={(e) => handleTheme(e.target.checked)}
@@ -165,7 +189,7 @@ const NavBar = () => {
           </div>
         ) : (
           <Link
-            onClick={() => alert("You are going to Login page")}
+            // onClick={() => alert("You are going to Login page")}
             to="/login"
             className="btn rounded-full border-gray-300  btn-sm bg-linear-to-r from-pink-500 to-red-500 text-white"
           >

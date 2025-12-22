@@ -27,7 +27,7 @@ const HomeWinnerSection = () => {
 
   <div className="overflow-x-auto">
     <table className="table-auto w-full border-collapse   min-w-[200px]">
-      <thead className="bg-gray-100">
+      <thead className="">
         <tr>
           <th className="border p-2 text-left">Rank</th>
           {/* <th className="border p-2 text-left">Email</th> */}
@@ -38,7 +38,7 @@ const HomeWinnerSection = () => {
       </thead>
       <tbody>
         {leaderboard.slice(0, 5).map((user, ) => (
-          <tr key={user.email} className="even:bg-gray-50">
+          <tr key={user.email} className="">
             <td className="border p-2">{user.rank}</td>
             {/* <td className="border p-2">{user.email}</td> */}
             <td className="border p-2">{user.title}</td>

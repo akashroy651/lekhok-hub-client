@@ -108,7 +108,7 @@ const MyContests = () => {
                     <button
                     onClick={() => handlePayment(contest)}
                      className="btn btn-primary tooltip
-                      text-black btn-sm" data-tip="Please Pay">Pay</button>
+                       btn-sm" data-tip="Please Pay">Pay</button>
                    
                   }
                 </td>
