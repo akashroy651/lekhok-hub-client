@@ -130,7 +130,7 @@ console.log('totalScore', totalScore)
   } catch (error) {
     Swal.fire({
       icon: 'error',
-      title: 'Failed to save score',
+      title: 'Already mark given. Failed to new score send! ',
       text: error.message
     });
   }

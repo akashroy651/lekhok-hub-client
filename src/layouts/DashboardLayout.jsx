@@ -118,10 +118,8 @@ const {role} = useRole();
                   <span className="is-drawer-close:hidden">Users Management</span>
                 </NavLink>
               </li>
-                    </>
-                  }
 
-
+                    
                   {/* Contest Participant */}
 
                    <li>
@@ -135,6 +133,14 @@ const {role} = useRole();
                   <span className="is-drawer-close:hidden">MyContest</span>
                 </NavLink>
               </li>
+
+
+
+                    </>
+                  }
+
+                 {/* End UsersManagement */}
+
 
 
                   {/* Contest Winner */}

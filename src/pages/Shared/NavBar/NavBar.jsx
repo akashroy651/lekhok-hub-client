@@ -48,7 +48,7 @@ const NavBar = () => {
       {
         user && <>
            <li>
-            <NavLink to="/dashboard/my-contests">My Contest</NavLink>
+            <NavLink to="/dashboard/my-contests">My Dashboard</NavLink>
           </li>
 
         </>
@@ -131,19 +131,19 @@ const NavBar = () => {
                 <li className="text-sm font-bold">{user.displayName}</li>
                 <li className="text-xs">{user.email}</li>
               </div>
-              <li className="mt-3">
+              {/* <li className="mt-3">
                 <Link to={"/profile"}>
                   <FaUser /> Profile
                 </Link>
-              </li>
+              </li> */}
 
               <li>
-                <Link to={"/my-models"}>My Models</Link>
+                <Link to={"/dashboard/my-contests"}>My Models</Link>
               </li>
 
-              <li>
+              {/* <li>
                 <Link to={"/my-downloads"}>My Downloads</Link>
-              </li>
+              </li> */}
 
               {/* <input
                 onChange={(e) => handleTheme(e.target.checked)}
@@ -152,12 +152,7 @@ const NavBar = () => {
                 className="toggle"
               /> */}
 
-              <li>
-                <a>
-                  {" "}
-                  <FaGear /> Settings
-                </a>
-              </li>
+             
               <li>
                 <button
                   onClick={handleLogOut}

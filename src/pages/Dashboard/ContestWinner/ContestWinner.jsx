@@ -30,7 +30,7 @@ const ContestWinner = () => {
           <thead>
             <tr>
               <th>Rank</th>
-              <th>Email</th>
+              {/* <th>Email</th> */}
               <th>Title</th>
               <th>Total Score</th>
               <th>Prize Money</th>
