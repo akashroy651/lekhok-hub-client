@@ -85,7 +85,7 @@ const ContestParticipant = () => {
   };
 
 
- const data = selectedParticipant
+ const participant = selectedParticipant
   ? {
       _id: selectedParticipant._id,
       title: selectedParticipant.title,
@@ -102,17 +102,6 @@ const handleScoreSubmit = async (e) => {
   e.preventDefault();
 
 
-
-
-if (!data) {
-  console.error("No participant selected!");
-  Swal.fire({
-    icon: "error",
-    title: "No participant selected!",
-  });
-  return;
-}
-
   const totalScore =
    Number(scores.creativity) +
       Number(scores.grammar) +
@@ -127,11 +116,8 @@ console.log('totalScore', totalScore)
   try {
 
 
-  
 
-
-
-    await axiosSecure.post('/participants', { participant: data, scores, totalScore});
+    await axiosSecure.post('/participants', { participant, scores, totalScore});
     Swal.fire({
       icon: 'success',
       title: 'Score saved successfully',
@@ -154,11 +140,6 @@ console.log('abcdef',scores)
 
 
 
-
-
-
-//   console.log('djdndjfnjd', participants)
-
   return (
     <div className="p-6">
       <h2 className="text-2xl font-bold mb-4">
@@ -170,7 +151,7 @@ console.log('abcdef',scores)
           <thead>
             <tr>
               <th>#</th>
-              <th>Email</th>
+              <th>Title</th>
               <th>Submission</th>
               <th>Score</th>
             </tr>
@@ -180,7 +161,7 @@ console.log('abcdef',scores)
             {participants.map((user, index) => (
               <tr key={user._id}>
                 <td>{index + 1}</td>
-                <td>{user.creatorEmail}</td>
+                <td>{user.title}</td>
                 <td>
                   <Link to={`/dashboard/contest/${user._id}`}
                    

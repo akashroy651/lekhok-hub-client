@@ -121,6 +121,21 @@ const {role} = useRole();
                 </NavLink>
               </li>
 
+              
+                  {/* Contest Winner */}
+
+                   <li>
+                <NavLink
+                  className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                  data-tip="ContestParticipant"
+                  to="/dashboard/contest-participant"
+                >
+                  
+                  <FaUserShield />
+                  <span className="is-drawer-close:hidden">MyContest</span>
+                </NavLink>
+              </li>
+
 
 
 

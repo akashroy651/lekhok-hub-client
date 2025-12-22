@@ -41,6 +41,9 @@ const NavBar = () => {
       <li>
         <NavLink to="/contest-create">Contest Create</NavLink>
       </li>
+      <li>
+        <NavLink to="/contest-winner">Contest Winner</NavLink>
+      </li>
 
       {
         user && <>
