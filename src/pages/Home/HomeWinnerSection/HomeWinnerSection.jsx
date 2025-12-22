@@ -13,11 +13,13 @@ const HomeWinnerSection = () => {
     },
   });
 
-  const { leaderboard = [], totalEntryFee = 0 } = data;
+  const { leaderboard = [],
+    //  totalEntryFee = 0, 
+    } = data;
   return (
     <div>
 <div className="p-6">
-  <h2 className="text-2xl font-bold mb-4">Leaderboard</h2>
+  <h2 className="text-4xl font-bold mb-5 text-center">Leaderboard</h2>
 
   <p className="mb-4 font-semibold">
     {/* Total Prize Pool: {totalEntryFee} ৳ */}
