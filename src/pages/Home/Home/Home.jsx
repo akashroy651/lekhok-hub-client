@@ -3,7 +3,7 @@ import Banner from '../Banner/Banner';
 import WorkSection from '../WorkSection/WorkSection';
 import Brands from '../Brands/Brands';
 
-const brandsPromise = fetch('/public/brands.json').then(res => res.json())
+// const brandsPromise = fetch('/public/brands.json').then(res => res.json())
 
 const Home = () => {
     return (
@@ -13,7 +13,7 @@ const Home = () => {
          
             <WorkSection></WorkSection>
             
-            <Brands brandsPromise={brandsPromise}></Brands>
+            {/* <Brands brandsPromise={brandsPromise}></Brands> */}
         </div>
     );
 };
