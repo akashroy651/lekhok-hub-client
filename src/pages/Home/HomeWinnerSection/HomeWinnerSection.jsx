@@ -20,7 +20,7 @@ const HomeWinnerSection = () => {
   <h2 className="text-2xl font-bold mb-4">Leaderboard</h2>
 
   <p className="mb-4 font-semibold">
-    Total Prize Pool: {totalEntryFee} ৳
+    {/* Total Prize Pool: {totalEntryFee} ৳ */}
   </p>
 
   <div className="overflow-x-auto">
@@ -35,7 +35,7 @@ const HomeWinnerSection = () => {
         </tr>
       </thead>
       <tbody>
-        {leaderboard.map((user, ) => (
+        {leaderboard.slice(0, 5).map((user, ) => (
           <tr key={user.email} className="even:bg-gray-50">
             <td className="border p-2">{user.rank}</td>
             {/* <td className="border p-2">{user.email}</td> */}
